@@ -34,10 +34,9 @@ function newTask() {
     console.log(arrayList);
 
     //Create list of task : adding the input and button into the list converted in text with innerHTML
-    liste.innerHTML += `<li> ${userTask} <button class="teamThree valid">Check OK</button><button class="teamThree change">Change</button><button class="teamThree delete">Delete</button> </li> `
+    liste.innerHTML += `<li class="flex"> ${userTask} <button class="teamThree valid">Check OK</button><button class="teamThree change">Change</button><button class="teamThree delete">Delete</button> </li> `
 
     console.log(liste);
-
 
     //Button "delete" inside the function (created meanwhile)
     let btnDelete = document.querySelectorAll(".delete")
@@ -50,11 +49,12 @@ function newTask() {
     });
 
     //Button "valid"
-    let btnValidate = document.querySelectorAll(".valid")
-
-    Array.from(btnValidate).forEach(element => {
+    let btnChecked = document.querySelectorAll(".valid")
+    
+    Array.from(btnChecked).forEach(element => {
         element.addEventListener('click', ()=>{
-            element.setAttribute("class","okValidate")
+            // element.setAttribute("class","done")
+            element.setAttribute("class","teamThree okValidate")
             element.style.background="rgb(148, 216, 148)"
             element.style.borderRadius="20px"
             element.style.color="white"
@@ -62,13 +62,95 @@ function newTask() {
         })
     })
 
+    // let btnValider = document.querySelectorAll(".tri button")[2] //Bouton taches déjà faites
+    let toutesLi = document.querySelectorAll("liste")
+    let allValid = document.querySelectorAll(".okValidate")
+    let btnCheckedGreen = document.querySelectorAll("okValidate")
+    console.log(btnCheckedGreen);
+    
 
-    let btnValider = document.querySelectorAll(".tri button")[2]
+    //Button menu "DONE"
+    let btnValider = document.querySelectorAll(".tri button")[2] //Bouton taches déjà faites
 
-    btnValider.addEventListener('click', ()=>{
-        
+    let btnOK 
+    
+    btnValider.addEventListener('click', () =>{
+        console.log("heloo");
+        if (btnOK == document.querySelectorAll(".okValidate")) {
+            // console.log("heloo");
+            console.log(btnOK);
+            element.className.add("disappaer")
+        }
+
+
+
+
+
+        // btnChecked = document.querySelectorAll(".valid")
+        // Array.from(btnChecked).forEach(element =>{
+        //     if (element.className=="okValidate") {
+        //         element.className.add="disappaer"
+        //     }
+            
+        // })
+
     })
 
+
+
+
+    // btnValider.addEventListener('click', ()=>{
+    //     let toutesLi = document.querySelectorAll("liste")
+    // })
+
+    //Test bouton Done
+    btnValider.addEventListener('click', ()=>{
+        for (let i = 0; i < toutesLi.length; i++) {
+            console.log(toutesLi[i]);
+
+            let allBtn = toutesLi[i].querySelectorAll(".teamThree")
+            // for (let i = 0; i < allBtn.length; i++) {
+                
+                
+            // }
+            console.log(allBtn);
+        }
+    })     
+
+
+        // if (element.style.background= "rgb(148, 216, 148)") {
+
+        //     element.style.display="block"
+
+        // }else{
+        //     element.style.display="none"
+        // }
+    // })
+
+
+
+    // btnValider.addEventListener('click', (e)=>{
+    //     if (e.target.classList.toggle('okValidate')) {
+    //         e.style="display:none"
+    //     }
+        
+
+        // if (e.target.classList.contains("okValidate")) {
+        //     if (element.style.background= "rgb(148, 216, 148)") {
+
+        //         element.style.display="block"
+        //         console.log();
+    
+        //      }
+        //     else{
+        //         element.style.display="none"
+        //     }
+        // }
+
+
+
+    //TOGGLE
+   
 
 
 

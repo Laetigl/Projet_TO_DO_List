@@ -141,3 +141,7 @@ button{
     margin : 5px;
     width:120px;
 }
+
+.disappaer{
+    display:none !important;
+}
