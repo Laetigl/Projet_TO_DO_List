@@ -5,14 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
 </head>
 <body>
-
         <div class="titreToDo">
-            <h3>TO DO list</h3>
-            <input type="text" placeholder="Enter a new task...">
+            <h3>TO DO LIST</h3>
+            <div class="inputAndButton">
+                <input class="inputUser" type="text" placeholder="Enter a new task...">
+                <button class="adding" >ADD A TASK</button>
+            </div>
+            <div class="tri">
+                <p>Sorted by :</p>
+                <button>All tasks</button>
+                <button>Current tasks</button>
+                <button>Done</button>
+
+            </div>
+            <ul class="allList"></ul>
+            <!-- <div class= "threeBtnTask" id ="threeBtnTask">
+                <button class="teamThree OK">Check OK</button>
+                <button class="teamThree Change">Change</button>
+                <button class="teamThree Delete">Delete</button>
+            </div> -->
         </div>
-        <button class="adding">Add a task</button>
     
 
     <script src="./public/js/main.js"></script>

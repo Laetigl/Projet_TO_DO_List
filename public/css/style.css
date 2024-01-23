@@ -5,15 +5,22 @@ body{
     background-color: rgb(161, 235, 235);
     display: flex;
     justify-content: center;
-    gap:10px
+    gap:10px;
+    background-image: url(../src/image/opened-notebook-multicolored-binder-clips.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: cover;
+   
 }
 .titreToDo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:10px;
+    gap:20px;
     height: 200px;
+    width:90%;
+    padding-top: 200px;
 }
 
 .titreToDo h3{
@@ -22,7 +29,12 @@ body{
     color: rgb(239, 177, 130);
     margin:0;
     height: 100px;
-    
+    font-family:'Poppins', sans-serif;
+}
+
+.inputAndButton{
+    display: flex;
+    gap:10px;
 }
 
 input{
@@ -30,23 +42,102 @@ input{
     height: 50px;
     width: 250px;
     border-radius: 30px;
-    text-align: center;
+    padding-left: 10px;
     font-size:15px;
+    font-family:'Poppins', sans-serif;
+}
+
+input:focus{
+    outline: 0;
+}
+
+.inputUser{
+    color:black;
+    font-family:'Poppins', sans-serif;
+
+}
+
+li{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.tri p {
+    color:rgb(117, 106, 91);
+    font-family:'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.tri button{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    font-family:'Poppins', sans-serif;
+    font-size: 12px;
+    transition: ease-out 0.5s;
+}
+
+.tri button:hover{
+    background-color: rgb(237, 172, 217);
+    color:white;
+    box-shadow: inset 0 -100px 0 0 #c45e99
+}
+
+.tri button:active {
+    transform: scale(0.4);
+}
+
+.allList{
+    width: 400px;
+    min-height: 50px;
+    /* border:2px dotted black */
 }
 
 .adding{
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 30px;
-    margin-top: 140px;
     border-radius: 20px;
-    width: 100px;
+    width: 130px;
+    height: 40px;
     text-align: center;
+    margin-top:10px;
     padding-left: 15px;
     font-weight: bolder;
+    font-family:'Poppins', sans-serif;
+    transition: 0.3s ease;
+}
 
+.adding:hover{
+    background-color: rgb(244, 228, 179);
+    color:rgb(97, 45, 45);
+    transform: scale(1.1);
+    font-weight: bold;
 }
 
 button{
     cursor: pointer;
+}
+
+#threeBtnTask{
+    /* display: none; */
+    color:rgb(0, 0, 0);
+    background-color: color;
+    width:200px;
+    font-family:'Poppins', sans-serif;
+}
+.teamThree{
+    color:white;
+    background-color: rgb(63, 154, 164);
+    border-radius: 20px;
+    font-family:'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin : 5px;
+    width:120px;
 }
