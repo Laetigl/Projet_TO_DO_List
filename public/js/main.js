@@ -7,6 +7,13 @@ btnAdd.addEventListener('click', ()=>{
         newTask()  
 })
 
+//Button enter
+input.addEventListener('keypress',function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault()
+        newTask()  
+    } 
+})
 
 let addTask
 let userText
@@ -27,7 +34,7 @@ function newTask() {
     console.log(arrayList);
 
     //Create list of task : adding the input and button into the list converted in text with innerHTML
-    liste.innerHTML += `<li> ${userTask} <button class="teamThree">Check OK</button><button class="teamThree">Change</button><button class="teamThree delete">Delete</button> </li> `
+    liste.innerHTML += `<li> ${userTask} <button class="teamThree valid">Check OK</button><button class="teamThree change">Change</button><button class="teamThree delete">Delete</button> </li> `
 
     console.log(liste);
 
@@ -40,8 +47,43 @@ function newTask() {
             console.log(btnDelete);
             element.parentNode.remove()
         })
-        console.log(btnDelete);
     });
+
+    //Button "valid"
+    let btnValidate = document.querySelectorAll(".valid")
+
+    Array.from(btnValidate).forEach(element => {
+        element.addEventListener('click', ()=>{
+            element.setAttribute("class","okValidate")
+            element.style.background="rgb(148, 216, 148)"
+            element.style.borderRadius="20px"
+            element.style.color="white"
+            element.style.width="100px"
+        })
+    })
+
+
+    let btnValider = document.querySelectorAll(".tri button")[2]
+
+    btnValider.addEventListener('click', ()=>{
+        
+    })
+
+
+
+
+
+     //Button "change"
+     let btnChange = document.querySelectorAll(".change")
+
+     Array.from(btnChange).forEach(element => {
+         element.addEventListener('click', ()=>{
+            liste.forEach(element => {
+                element.innerHTML = input.textContent
+            });
+         })
+     })
+
     liste.style.display="flex"
     liste.style.gap="10px"
     liste.style.flexDirection="column"
@@ -55,8 +97,23 @@ let allLi
 let btnAll = document.querySelectorAll(".tri button")[0]
 
 btnAll.addEventListener("click", ()=>{
-    allLi.innerHTML=arrayList
+    allLi.innerHTML = arrayList
 })
+
+
+//Bouton DONE : Display of the task validated 
+// let btnDoneValid= document.querySelectorAll(".tri button")[2]
+// // console.log(btnDone);
+// let taskAllDone = document.querySelectorAll(".okValidate")
+// console.log(taskAllDone);
+// let cloneTask 
+
+// btnDoneValid.addEventListener('click', ()=>{
+//     cloneTask = taskAllDone.cloneNode(true)
+//     cloneTask.innerHTML
+//     console.log(cloneTask);
+// })
+
 
 
 //Bouton DONE : Delete of the task finished  => OK
@@ -64,11 +121,13 @@ let btnDone = document.querySelectorAll(".tri button")[2]
 console.log(btnDone);
 
 btnDone.addEventListener('click', ()=>{
-    liste.remove()
+    arrayList.push(liste.innerHTML)
+    console.log(liste.children);
+
+    // arrayList.innerText = btnDone.innerHTML
+    // console.log(allTaskDone);
+    // liste.remove()
 })
-
-
-
 
 
 
